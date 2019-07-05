@@ -21,6 +21,8 @@ sub, comantur **si** liberiore illa. Amantem haec ait soror sim cum!
 - Femina tum dies nepotes annos nec rescindere
 - Invenit et quod in dixit inducere suorum
 
+![Sample Image](images/ipsum-logo.jpg)
+
 ## Et populi
 
 Illa fuit prius **suos nubibus**; soli repetet bisque. Est mea esse vitiumque
