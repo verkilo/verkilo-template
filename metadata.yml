@@ -1,12 +1,30 @@
 ---
-
+# ===============================================
+# Publisher (self-publisher) information
+#
+publisher: Vanity Press
 website: "https://merovex.com"
 imprint: "images/ipsum-logo.jpg"
 
 # ===============================================
-# Book formatting - Avoid
+# Legal discolamers and reservations of works in this series.
 #
-links-as-notes: true
-fontsize: 10pt
-trimsize: Novella
+disclaimer: >
+  This is a work of fiction. Names, characters, places and incidents are either
+  the product of the author's imagination or are used fictitiously, and any resemblance to
+  actual persons, living or dead, business establishments, events or locales is entirely
+  coincidental.
+
+reservation: >
+  No part of this publication may be reproduced, stored in a retrieval system, posted on the Internet, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without prior written permission from the author. The only exception is by a reviewer, who may quote short excerpts in a review.
+
+# ===============================================
+# Book formatting
+#
+links-as-notes: false
+fontsize: 10pt # try 14pt for Large Print
+trimsize: Trade
+toc: false
+toc-depth: 2
+crop: true # Delete this to remove the black lines and letter paper size.
 ---
