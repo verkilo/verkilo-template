@@ -1,0 +1,60 @@
+---
+# ===============================================
+# This is a default template for settings applied to the entire
+# book repository. This template allows the author to use identical
+# settings across many books.
+
+# ===============================================
+# Publisher (https://verkilo.com/docs/settings)
+
+author: "John Thomas"
+publisher: Ima Press
+website: "https://example.com"
+imprint: "images/merovex-logo.png"
+
+# ===============================================
+# Copyright (https://verkilo.com/docs/legal)
+
+disclaimer: >
+  This is a work of fiction. Names, characters, places and incidents are either
+  the product of the author's imagination or are used fictitiously, and any resemblance to
+  actual persons, living or dead, business establishments, events or locales is entirely
+  coincidental.
+
+reservation: >
+  No part of this publication may be reproduced, stored in a retrieval system, posted on the Internet, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without prior written permission from the author. The only exception is by a reviewer, who may quote short excerpts in a review.
+
+country: Printed in the United States of America
+
+# ===============================================
+# Book formatting (https://verkilo.com/docs/settings)
+crop: false
+links-as-notes: false
+toc: false
+toc-depth: 1
+fancybreak: \Large\adforn{73}{\Huge \adforn{73}}\adforn{73}
+
+# ===============================================
+# Fonts (https://verkilo.com/docs/fonts)
+
+monofont: "Fira Code"
+mainfont: "Literata"
+sansfont: "Oswald"
+
+# ===============================================
+# Trimsize (https://verkilo.com/docs/trimsize)
+
+# trimsize: Novella
+# trimsize: UKBFormat
+trimsize: SmallTrade
+# trimsize: Digest
+# trimsize: Trade
+# trimsize: Royal
+# trimsize: Textbook
+# trimsize: Crown
+# trimsize: LargeTrade
+# trimsize: A4
+# trimsize: Letter
+# trimsize: Square
+
+---
