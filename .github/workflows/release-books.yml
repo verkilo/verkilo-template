@@ -20,7 +20,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: postal-marines-series
+          name: verkilo-template
           path: build
   job_2:
     name: Upload Books to Release
@@ -29,11 +29,11 @@ jobs:
       - name: Download Artifacts from Build
         uses: actions/download-artifact@v1
         with:
-          name: postal-marines-series
+          name: verkilo-template
       - name: Draft Release & Upload Artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "/home/runner/work/postal-marines-series/postal-marines-series/postal-marines-series/*"
+          artifacts: "/home/runner/work/verkilo-template/verkilo-template/verkilo-template/*"
           tag: book-release
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}

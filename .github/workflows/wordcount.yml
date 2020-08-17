@@ -1,5 +1,5 @@
 
-name: Wordcount Books
+name: Wordcount Books Weekly
 on:
   schedule:
     - cron: "30 3 * * 1"
@@ -11,11 +11,12 @@ jobs:
       - name: Get repo
         uses: actions/checkout@master
         with:
-          ref: develop
-      - name: Run Wordcount (Docker)
-        uses: docker://merovex/wordcount:latest
+          ref: master
+      - name: Run wordcount (Docker)
+        uses: docker://merovex/verkilo:latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTION: wordcount
           FLAGS: "--log --delta --offset=-04:00"
       - name: Commit files
         run: |

@@ -3,19 +3,19 @@ name: Proof Books
 on: [push]
 jobs:
   build:
-    if: "contains(toJSON(github.event.commits.*.message), 'proof')"
+    if: "contains(toJSON(github.event.commits.*.message), '@verkilo proof')"
     name: Compile books
     runs-on: ubuntu-latest
     steps:
       - name: Get repo
         uses: actions/checkout@v1
-      - name: Run Wordcount (Docker)
-        uses: docker://merovex/wordcount:latest
+      - name: Run compiler (Docker)
+        uses: docker://merovex/verkilo:latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACTION: compile
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: postal-marines-series
+          name: verkilo-template
           path: build
