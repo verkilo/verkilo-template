@@ -1,0 +1,25 @@
+
+name: Wordcount Books
+on:
+  schedule:
+    - cron: "30 3 * * 1"
+jobs:
+  build:
+    name: Wordcount
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo
+        uses: actions/checkout@master
+        with:
+          ref: develop
+      - name: Run Wordcount (Docker)
+        uses: docker://merovex/wordcount:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FLAGS: "--log --delta --offset=-04:00"
+      - name: Commit files
+        run: |
+          git config --global user.email "ben@merovex.com"
+          git config --global user.name "Ben W"
+          git commit -am "Updating wordcount"
+          git push origin $(git symbolic-ref HEAD | cut -d'/' -f3)

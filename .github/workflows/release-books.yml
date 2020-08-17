@@ -1,0 +1,39 @@
+
+name: Release Books
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+jobs:
+  job_1:
+    name: Compile the Books
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v1
+      - name: Run Compiler
+        uses: docker://merovex/book-compiler:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: postal-marines-series
+          path: build
+  job_2:
+    name: Upload Books to Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts from Build
+        uses: actions/download-artifact@v1
+        with:
+          name: postal-marines-series
+      - name: Draft Release & Upload Artifacts
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "/home/runner/work/postal-marines-series/postal-marines-series/postal-marines-series/*"
+          tag: book-release
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
